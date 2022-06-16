@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <link rel="stylesheet" href='/static/CSS/styles.css'>
+    <title>{% block title %}{% endblock %}  My Library</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/bookfavi.png">
+  
+    {% endblock %}
+
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #333;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: rgb(245, 241, 241);
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover {
+          background-color: #111;
+        }
+        </style>
+  </head>
+  <!-- <body style="background-image: url('/static/images/image1.jpg');"> -->
+  <body style="background-color:rgb(216, 215, 215) ;">
+    
+    <ul>
+        <!-- <li><a class="active" href="#home">Home</a></li> -->
+        <li><a href="/home">Home</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/customers">Customers</a></li>
+        <li><a href="/loans">Loans</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer" >
+  </body>
+</html>
+

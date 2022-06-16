@@ -1,0 +1,42 @@
+{%extends 'layout.html'%}
+{%block header%}{{super()}}{%endblock%}
+{%block content%}
+
+<h1 class="pushLeft">You can find a book from here</h1>
+
+<div class="pushLeft">
+    <form action="/books/findBook" method="POST">
+        <label>Book Name:</label>
+        <br>
+        <input type="text" name="bookName" required autofocus>
+        <br><br>
+        <button type="submit">find book</button>
+    </form>
+
+    <h1>The book you want is: </h1>
+
+    <div class="pushLeft">
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Year Published</th>
+                <th>Type</th>
+                <th>Loan status</th>
+            </tr>
+            {% for book in books %}
+            <tr>
+                <td>{{book[0]}}</td>
+                <td>{{book[1]}}</td>
+                <td>{{book[2]}}</td>
+                <td>{{book[3]}}</td>
+                <td>{{book[4]}}</td>
+                <td>{{book[5]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{%endblock%}
+{%block footer%}{{super()}}{%endblock%}
